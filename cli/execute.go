@@ -18,3 +18,10 @@ func Execute() {
 	countCharacters := flag.Bool("m", false, "Count characters")
 	flag.Parse()
 
+
+	if !(*countBytes || *countLines || *countWords || *countCharacters) {
+		*countBytes = true
+		*countLines = true
+		*countWords = true
+	}
+
