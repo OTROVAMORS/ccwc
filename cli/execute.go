@@ -25,3 +25,16 @@ func Execute() {
 		*countWords = true
 	}
 
+
+	filePath := flag.Arg(0)
+	if filePath == "" {
+
+		data, err := ioutil.ReadAll(os.Stdin)
+		if err != nil {
+			fmt.Println("Error reading from standard input:", err)
+			return
+		}
+		lib.ProcessData(data, *countBytes, *countLines, *countWords, *countCharacters)
+		return
+	}
+
