@@ -48,3 +48,13 @@ func ReadFile(filePath string) ([]byte, error) {
     return data, nil
 }
 
+func countLinesInData(data []byte) int {
+    lineCount := 0
+    for _, b := range data {
+        if b == '\n' {
+            lineCount++
+        }
+    }
+    return lineCount
+}
+
