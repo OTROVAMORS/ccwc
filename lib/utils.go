@@ -58,3 +58,17 @@ func countLinesInData(data []byte) int {
     return lineCount
 }
 
+func countWordsInData(data []byte) int {
+    wordCount := 0
+    inWord := false
+    for _, b := range data {
+        if unicode.IsSpace(rune(b)) {
+            inWord = false
+        } else if !inWord {
+            wordCount++
+            inWord = true
+        }
+    }
+    return wordCount
+}
+
