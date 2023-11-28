@@ -38,3 +38,8 @@ func Execute() {
 		return
 	}
 
+
+	lib.CountAndPrint(filePath, *countBytes, *countLines, *countWords, *countCharacters)
+}
+
+
