@@ -72,3 +72,6 @@ func countWordsInData(data []byte) int {
     return wordCount
 }
 
+func countCharactersInData(data []byte) int {
+    return len(data)
+}
