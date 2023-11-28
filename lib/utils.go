@@ -40,3 +40,11 @@ func ProcessData(data []byte, countBytes, countLines, countWords, countCharacter
     }
 }
 
+func ReadFile(filePath string) ([]byte, error) {
+    data, err := os.ReadFile(filePath)
+    if err != nil {
+        return nil, err
+    }
+    return data, nil
+}
+
