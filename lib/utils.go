@@ -18,3 +18,25 @@ func CountAndPrint(filePath string, countBytes, countLines, countWords, countCha
     ProcessData(data, countBytes, countLines, countWords, countCharacters)
 }
 
+func ProcessData(data []byte, countBytes, countLines, countWords, countCharacters bool) {
+    if countBytes {
+        byteCount := len(data)
+        fmt.Printf("Bytes: %8d\n", byteCount)
+    }
+
+    if countLines {
+        lineCount := countLinesInData(data)
+        fmt.Printf("Lines: %8d\n", lineCount)
+    }
+
+    if countWords {
+        wordCount := countWordsInData(data)
+        fmt.Printf("Words: %8d\n", wordCount)
+    }
+
+    if countCharacters {
+        charCount := countCharactersInData(data)
+        fmt.Printf("Characters: %8d\n", charCount)
+    }
+}
+
